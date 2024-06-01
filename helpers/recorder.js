@@ -63,7 +63,7 @@ const RTSPRecorder = class {
   }
 
   getChildProcess(fileName) {
-    var args = ["-i", this.url];
+    const args = ["-i", this.url];
     const mediaArgs = this.getArguments();
     mediaArgs.forEach((item) => {
       args.push(item);
@@ -108,7 +108,7 @@ const RTSPRecorder = class {
   }
 
   killStream() {
-    this.writeStream.kill();
+    this.writeStream.kill("SIGINT");
   }
 
   recordStream() {
