@@ -1,0 +1,16 @@
+{
+  "name": "node-js-ipcam-recorder",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/potaesm/node-js-ipcam-recorder.git",
+  "author": "potaesm <suthinan.musitmani@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "du": "^1.0.0",
+    "moment": "^2.30.1",
+    "rimraf": "^5.0.7"
+  },
+  "scripts": {
+    "start": "node --env-file=.env index.js"
+  }
+}
