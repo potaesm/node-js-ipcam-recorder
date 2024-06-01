@@ -71,7 +71,6 @@ const RTSPRecorder = class {
     args.push(fileName);
     return childProcess.spawn("ffmpeg", args, {
       detached: false,
-      stdio: "ignore",
     });
   }
 
@@ -108,7 +107,7 @@ const RTSPRecorder = class {
   }
 
   killStream() {
-    this.writeStream.kill("SIGINT");
+    this.writeStream.stdin.write("q");
   }
 
   recordStream() {
