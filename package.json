@@ -7,6 +7,7 @@
   "license": "MIT",
   "dependencies": {
     "du": "^1.0.0",
+    "find-remove": "^4.1.0",
     "moment": "^2.30.1",
     "rimraf": "^5.0.7"
   },

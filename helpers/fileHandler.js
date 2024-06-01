@@ -1,6 +1,7 @@
 const fs = require("fs");
 const rimraf = require("rimraf");
 const du = require("du");
+const findRemoveSync = require("find-remove");
 
 const FileHandler = class {
   createDirIfNotExists(folderPath) {
@@ -15,6 +16,14 @@ const FileHandler = class {
 
   removeDirectory(folderPath, callback) {
     rimraf(folderPath, callback);
+  }
+
+  removeOlder(folderPath, ageSeconds, extensions = [".mp4"], limit = 100) {
+    return findRemoveSync(folderPath, {
+      age: { seconds: ageSeconds },
+      extensions,
+      limit,
+    });
   }
 
   getDirectorySize(folderPath, callback) {
