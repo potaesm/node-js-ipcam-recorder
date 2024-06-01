@@ -5,7 +5,7 @@ const { CAM_USERNAME, CAM_PASSWORD, CAM_IP } = process.env;
 
 let rec = new Recorder({
   url: `rtsp://${CAM_USERNAME}:${CAM_PASSWORD}@${CAM_IP}:554/cam/realmonitor?channel=1&subtype=0&unicast=true&proto=Onvif`,
-  timeLimit: 60,
+  timeLimit: 30,
   name: "front-01",
   // audioCodec: "aac",
 });
@@ -16,5 +16,4 @@ setTimeout(() => {
   console.log("Stopping Recording");
   rec.stopRecording();
   rec = null;
-  process.exit();
-}, 60000);
+}, 300000);
